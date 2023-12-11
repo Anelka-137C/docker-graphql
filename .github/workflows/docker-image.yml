@@ -26,7 +26,7 @@ jobs:
     
     - name: Build Docker Image
       run: |
-        docker build --tag anelka137/docker-graphqlql:0.0.2 .
+        docker build --tag anelka137/docker-graphql:0.0.2 .
 
     - name: Push Docker Image
       run: |
