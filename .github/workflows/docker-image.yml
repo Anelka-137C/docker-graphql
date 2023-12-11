@@ -30,4 +30,4 @@ jobs:
 
     - name: Push Docker Image
       run: |
-        docker push anelka137/docker-graphql:0.0.2 .
+        docker push anelka137/docker-graphql:0.0.2
