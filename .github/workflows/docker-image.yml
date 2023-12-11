@@ -21,9 +21,13 @@ jobs:
       env: 
         DOCKER_USER: ${{secrets.DOCKER_USER}} 
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      run:
-        echo "Iniciando login"
+      run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-        echo "Fin de login"
-#    - name: Build the Docker image
-#      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    
+    - name: Build Docker Image
+      run: |
+        docker build --tag anelka137/docker-graphqlql:0.0.2 .
+
+    - name: Push Docker Image
+      run: |
+        docker push anelka137/docker-graphqlql:0.0.2 .
